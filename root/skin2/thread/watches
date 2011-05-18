@@ -29,7 +29,7 @@
                         [%- IF authed_user || mini_pager %]
                         [
                             [%- IF authed_user %]
-                            <a href="thread/next_post?thread=[% thread.id %]">Continue</a>
+                            <a href="thread/[% thread.id %]/next_post">Continue</a>
                             [%- END %]
                         ]
                         [%- END %]

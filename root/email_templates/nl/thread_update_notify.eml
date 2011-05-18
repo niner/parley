@@ -5,7 +5,7 @@ een nieuw antwoord langs heeft ontvangen [% post.creator.forum_name %].
 
 Klik hier blijven lezend de draad:
 
- [% c.req.base %]thread/next_post?thread=[% post.thread.id %]
+ [% c.req.base %]thread/[% post.thread.id %]/next_post
 
 Klik hier om de recentste post in de draad te bekijken:
 

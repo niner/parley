@@ -12,7 +12,7 @@
         <p>Scegliere una delle seguenti azioni:
         <ul>
             <li>
-            <a href="[% c.req.base %]thread/next_post?thread=[% post.thread.id %]">Continuare a leggere "[% post.thread.subject %]" dal punto dove è stato lasciato</a>
+            <a href="[% c.req.base %]thread/[% post.thread.id %]/next_post">Continuare a leggere "[% post.thread.subject %]" dal punto dove è stato lasciato</a>
             </li>
             <li>
             <a href="[% c.req.base %]post/view?post=[% post.id %]">Vedere "[% post.thread.subject %]" dal nuovo messaggio</a>

@@ -13,7 +13,7 @@
 <ul>
     [% IF current_thread %]
     [% IF authed_user %]
-    <li>[%l('Continue reading')%]: <a href="thread/next_post?thread=[%current_thread.id%]">[%current_thread.subject%]</a></li>
+    <li>[%l('Continue reading')%]: <a href="thread/[%current_thread.id%]/next_post">[%current_thread.subject%]</a></li>
     [% END %]
     <li>[%l('Return to')%]: <a href="thread/[%current_thread.id%]/view">[%current_thread.subject%]</a></li>
     [% END %]

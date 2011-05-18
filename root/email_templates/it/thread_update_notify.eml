@@ -5,7 +5,7 @@ Il thread "[% post.thread.subject %]"
 
 Clicca qui per continuare a leggere il thread:
 
- [% c.req.base %]thread/next_post?thread=[% post.thread.id %]
+ [% c.req.base %]thread/[% post.thread.id %]/next_post
 
 Clicca qui per vedere l'ultimo messaggio nel thread:
 

@@ -93,7 +93,7 @@ sub add : Local {
     }
 }
 
-sub next_post : Local {
+sub next_post : Chained('setup') PathPart Args(0) {
     my ($self, $c) = @_;
 
     # make sure we're logged in

@@ -5,7 +5,7 @@ has received a new reply by [% post.creator.forum_name %].
 
 Click here to continue reading the thread:
 
- [% c.req.base %]thread/next_post?thread=[% post.thread.id %]
+ [% c.req.base %]thread/[% post.thread.id %]/next_post
 
 Click here to view the latest post in the thread:
 
