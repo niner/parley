@@ -248,7 +248,7 @@ sub view : Chained('setup') PathPart Args(0) {
     1; # return 'true'
 }
 
-sub watch :Local {
+sub watch : Chained('setup') PathPart Args(0) {
     my ($self, $c) = @_;
 
     # the watch parameter tells us if we're adding or removing a watch

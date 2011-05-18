@@ -7,10 +7,10 @@
     [%- IF watching_thread %]
         [%l('You are watching this thread')%].
         (
-        <a href="thread/watch?thread=[% current_thread.id %]&amp;page=[% page.current_page %]&amp;watch=0">[%l('Remove Watch')%]</a>
+        <a href="thread/[% current_thread.id %]/watch?page=[% page.current_page %]&amp;watch=0">[%l('Remove Watch')%]</a>
         )
     [%- ELSE %]
-        <a href="thread/watch?thread=[% current_thread.id %]&amp;page=[% page.current_page %]">[%l('Watch this thread')%]</a>
+        <a href="thread/[% current_thread.id %]/watch?page=[% page.current_page %]">[%l('Watch this thread')%]</a>
     [%- END%]
 </div>
 [%- END %] [%# authed_user block %]
