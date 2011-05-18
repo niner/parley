@@ -39,7 +39,7 @@
                                 [% ELSIF authed_user %]
                                     <span class="yui-button yui-link-button">
                                         <span class="first-child">
-                                            <a href="thread/reply?thread=[% current_thread.id %]">[%l('Reply')%]</a>
+                                            <a href="thread/[% current_thread.id %]/reply">[%l('Reply')%]</a>
                                         </span>
                                     </span>
                                 [% END %]
@@ -121,23 +121,23 @@
                         [% END %]
                         <span class="yui-button yui-link-button">
                             <span class="first-child">
-                                <a href="thread/reply?post=[% post.id %]">[%l('Quote')%]</a>
+                                <a href="thread/[% current_thread.id %]/reply?post=[% post.id %]">[%l('Quote')%]</a>
                             </span>
                         </span>
                         <span class="yui-button yui-link-button">
                             <span class="first-child">
-                                <a href="thread/reply?thread=[% current_thread.id %]">[%l('Reply')%]</a>
+                                <a href="thread/[% current_thread.id %]/reply">[%l('Reply')%]</a>
                             </span>
                         </span>
                     [% ELSIF (!current_thread.locked && !authed_user) %]
                         <span class="yui-button yui-link-button">
                             <span class="first-child">
-                                <a href="thread/reply?thread=[% current_thread.id %]">[%l('LOGIN_AND_REPLY')%]</a>
+                                <a href="thread/[% current_thread.id %]/reply">[%l('LOGIN_AND_REPLY')%]</a>
                             </span>
                         </span>
                         <span class="yui-button yui-link-button">
                             <span class="first-child">
-                                <a href="thread/reply?post=[% post.id %]">[%l('LOGIN_AND_QUOTE')%]</a>
+                                <a href="thread/[% current_thread.id %]/reply?post=[% post.id %]">[%l('LOGIN_AND_QUOTE')%]</a>
                             </span>
                         </span>
                     [% END %]
@@ -214,7 +214,7 @@
                                 [% ELSIF authed_user %]
                                     <span class="yui-button yui-link-button">
                                         <span class="first-child">
-                                            <a href="thread/reply?thread=[% current_thread.id %]">[%l('Reply')%]</a>
+                                            <a href="thread/[% current_thread.id %]/reply">[%l('Reply')%]</a>
                                         </span>
                                     </span>
                                 [% END %]

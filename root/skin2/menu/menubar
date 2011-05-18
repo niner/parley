@@ -50,7 +50,7 @@
                         <h6 class="first-of-type">[%ForumCode.escape(current_thread.subject)|truncate(25)%]</h6>
                         [% END %]
                         <ul>
-                            <li class="yuimenuitem"><a class="yuimenuitemlabel[%thread_disabled%]" href="[%IF thread_disabled%]#[%ELSE%]thread/reply?thread=[%current_thread.id%][%END%]">[%l('Add Reply')%]</a></li>
+                            <li class="yuimenuitem"><a class="yuimenuitemlabel[%thread_disabled%]" href="[%IF thread_disabled%]#[%ELSE%]thread/[%current_thread.id%]/reply[%END%]">[%l('Add Reply')%]</a></li>
                             [%- IF watching_thread %]
                             <li class="yuimenuitem"><a class="yuimenuitemlabel[%thread_disabled%]" href="[%IF thread_disabled%]#[%ELSE%]thread/watch?thread=[%current_thread.id%]&amp;page=[%page.current_page%]&amp;watch=0[%END%]">[%l('Remove Watch')%]</a></li>
                             [%- ELSE %]

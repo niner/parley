@@ -127,7 +127,7 @@ sub recent : Local {
     return;
 }
 
-sub reply : Local {
+sub reply : Chained('setup') PathPart Args(0) {
     my ($self, $c) = @_;
 
     # make sure we're logged in
