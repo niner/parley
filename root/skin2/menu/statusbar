@@ -6,7 +6,7 @@
                     <a href="forum/list">Home</a>
                     [% IF current_forum %]
                       &raquo;
-                      <a href="forum/view?forum=[% current_forum.id %]">[% current_forum.name %]</a>
+                      <a href="forum/[% current_forum.id %]/view">[% current_forum.name %]</a>
                       [% IF current_thread %]
                         &raquo;
                         <a href="thread/[% current_thread.id %]/view">[% ForumCode.escape(current_thread.subject) %]</a>

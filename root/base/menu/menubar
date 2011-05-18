@@ -24,7 +24,7 @@
 
                         <ul>
                             [% WHILE (forum = available_forums.next) %]
-                            <li class="yuimenuitem"><a class="yuimenuitemlabel" href="forum/view?forum=[%forum.id%]">[% forum.name %]</a></li>
+                            <li class="yuimenuitem"><a class="yuimenuitemlabel" href="forum/[%forum.id%]/view">[% forum.name %]</a></li>
                             [% END %]
                         </ul>
                     </div>
@@ -37,7 +37,7 @@
                         <h6 class="first-of-type">[% ForumCode.escape(current_forum.name) %]</h6>
                         [% END %]
                         <ul>
-                            <li class="yuimenuitem"><a class="yuimenuitemlabel[%forum_disabled%]" href="[%IF forum_disabled%]#[%ELSE%]forum/view?forum=[%current_forum.id%][%END%]">[%l('View Threads')%]</a></li>
+                            <li class="yuimenuitem"><a class="yuimenuitemlabel[%forum_disabled%]" href="[%IF forum_disabled%]#[%ELSE%]forum/[%current_forum.id%]/view[%END%]">[%l('View Threads')%]</a></li>
                             <li class="yuimenuitem"><a class="yuimenuitemlabel[%forum_disabled%]" href="[%IF forum_disabled%]#[%ELSE%]thread/add?forum=[%current_forum.id%][%END%]">[%l('Create New Thread')%]</a></li>
                         </ul>
                     </div>

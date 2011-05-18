@@ -19,7 +19,7 @@
     [% END %]
 
     [% IF current_forum %]
-    <li>[%l('View all')%] <a href="forum/view?forum=[%current_forum.id%]">[%current_forum.name%]</a> [%l('threads')%]</li>
+    <li>[%l('View all')%] <a href="forum/[%current_forum.id%]/view">[%current_forum.name%]</a> [%l('threads')%]</li>
     [% END %]
 </ul>
 [% END %]

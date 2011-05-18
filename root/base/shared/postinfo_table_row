@@ -17,7 +17,7 @@
         </div>
         [%- IF show_forum_name %]
         <div class="thread_recent_forum">
-            <a href="[%c.uri_for('/forum/view',{'forum'=>thread.forum.id})%]">[% thread.forum.name %]</a>
+            <a href="[%c.uri_for("/forum/${thread.forum.id}/view")%]">[% thread.forum.name %]</a>
         </div>
         [% END %]
         <div class="forum_mini_pager">

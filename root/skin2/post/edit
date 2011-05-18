@@ -1,6 +1,6 @@
 <div style="margin-top:10px;"></div>
 <div class="thread_header">
-    <a href="forum/view?forum=[% current_forum.id %]">[% current_forum.name %]</a>
+    <a href="forum/[% current_forum.id %]/view">[% current_forum.name %]</a>
     &nbsp;:&nbsp;
     [%l('Edit')%]
     &nbsp;:&nbsp;

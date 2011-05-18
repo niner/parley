@@ -7,7 +7,7 @@
         <tr class="row [% row_styles.$toggler %]">
             <td width="50%">
                 <div class="forum_name">
-                    <a href="[%c.uri_for('/forum/view',{'forum'=>forum.id})%]" class="forum_link">[% HTML.escape(forum.name) %]</a>
+                    <a href="[%c.uri_for("/forum/${forum.id}/view")%]" class="forum_link">[% HTML.escape(forum.name) %]</a>
                 </div>
                 <div class="forum_description">
                     [% HTML.escape(forum.description) %]

@@ -8,6 +8,27 @@ use base 'Catalyst::Controller';
 
 use Parley::App::Error qw( :methods );
 
+sub setup : Chained('/') PathPart('forum') CaptureArgs(1) {
+    my ($self, $c, $forum) = @_;
+
+    # make sure the paramter looks sane
+    if (not $forum =~ m{\A\d+\z}) {
+        $c->stash->{error}{message} =
+                $c->localize('non-integer forum id passed')
+            . ': ['
+            . $forum
+            . ']';
+        return;
+    }
+
+    # get the matching forum
+    $c->_current_forum(
+        $c->model('ParleyDB::Forum')->record_from_id(
+            $forum
+        )
+    );
+}
+
 sub list : Local {
     my ($self, $c) = @_;
 
@@ -17,7 +38,7 @@ sub list : Local {
             ->forum_list();
 }
 
-sub view : Local {
+sub view : Chained('setup') PathPart Args(0) {
     my ($self, $c) = @_;
 
     if (not defined $c->_current_forum) {
