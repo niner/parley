@@ -9,7 +9,7 @@
                       <a href="forum/view?forum=[% current_forum.id %]">[% current_forum.name %]</a>
                       [% IF current_thread %]
                         &raquo;
-                        <a href="thread/view?thread=[% current_thread.id %]">[% ForumCode.escape(current_thread.subject) %]</a>
+                        <a href="thread/[% current_thread.id %]/view">[% ForumCode.escape(current_thread.subject) %]</a>
                       [% END %]
                     [% END %]
                 </td>

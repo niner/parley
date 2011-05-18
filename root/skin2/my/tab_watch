@@ -17,7 +17,7 @@
                     [% END %]
                 </td>
                 <td style="vertical-align: top;">
-                    <a href="thread/view?thread=[% thread.id %]">
+                    <a href="thread/[% thread.id %]/view">
                     [% ForumCode.escape(watch.thread.subject) %]
                     </a>
                     <br />

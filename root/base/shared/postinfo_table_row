@@ -13,7 +13,7 @@
 
     <td>
         <div class="thread_subject">
-            <a href="[%c.uri_for('/thread/view',{'thread'=>thread.id})%]" class="topic_link">[% ForumCode.escape(thread.subject) |truncate(55) %]</a>
+            <a href="[%c.uri_for("/thread/${thread.id}/view")%]" class="topic_link">[% ForumCode.escape(thread.subject) |truncate(55) %]</a>
         </div>
         [%- IF show_forum_name %]
         <div class="thread_recent_forum">

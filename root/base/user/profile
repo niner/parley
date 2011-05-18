@@ -42,7 +42,7 @@
                 </div>
                 <div class="yui-u">
                     [% IF profiled_user.last_post %]
-                    <a href="thread/view?thread=[% profiled_user.last_post.thread.id %]">[% ForumCode.escape(profiled_user.last_post.thread.subject) |truncate(55) %]</a>
+                    <a href="thread/[% profiled_user.last_post.thread.id %]/view">[% ForumCode.escape(profiled_user.last_post.thread.subject) |truncate(55) %]</a>
                     <br />
                     [% nicedate(profiled_user.last_post.created) %]
                     [% ELSE %]

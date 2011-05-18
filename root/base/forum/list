@@ -17,7 +17,7 @@
                 <div class="forum_lastpost">
                 [% IF forum.last_post %]
                 <div class="forum_lastpost_subject">
-                    <a href="[%c.uri_for('/thread/view',{thread=>forum.last_post.thread_id})%]" class="topic_link">[% HTML.escape(forum.last_post.thread.subject) |truncate(55) %]</a>
+                    <a href="[%c.uri_for("/thread/${forum.last_post.thread_id}/view")%]" class="topic_link">[% HTML.escape(forum.last_post.thread.subject) |truncate(55) %]</a>
                 </div>
                 <div class="topic_creator">
                     [%l('posted by')%]

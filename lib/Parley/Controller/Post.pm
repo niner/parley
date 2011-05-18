@@ -148,9 +148,8 @@ sub view : Local {
     # build the URL to redirect to
     my $redirect_url =
         $c->uri_for(
-            '/thread/view',
+            "/thread/$thread/view",
             {
-                thread  => $thread,
                 page    => $page_number,
             }
         )

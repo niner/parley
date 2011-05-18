@@ -38,6 +38,32 @@ my %dfv_profile_for = (
 # Controller Actions
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+sub setup : Chained('/') PathPart('thread') CaptureArgs(1) {
+    my ($self, $c, $thread) = @_;
+
+    # make sure the paramter looks sane
+    if (not $thread =~ m{\A\d+\z}) {
+        $c->stash->{error}{message} =
+                $c->localize('non-integer thread id passed')
+            . ': ['
+            . $thread
+            . ']';
+        $c->detach;
+    }
+
+    # get the matching thread
+    $c->_current_thread(
+        $c->model('ParleyDB::Thread')->record_from_id(
+            $thread
+        )
+    );
+
+    # set the current_forum from the current thread
+    $c->_current_forum(
+        $c->_current_thread->forum()
+    );
+}
+
 sub add : Local {
     my ($self, $c) = @_;
 
@@ -150,7 +176,7 @@ sub reply : Local {
     }
 }
 
-sub view : Local {
+sub view : Chained('setup') PathPart Args(0) {
     my ($self, $c) = @_;
 
     if (not defined $c->_current_thread) {
@@ -279,9 +305,8 @@ sub watch :Local {
 
         # build the URL to redirect to
         $redirect_url = $c->uri_for(
-            '/thread/view',
+            '/thread/' . $c->_current_thread()->id() . '/view',
             {
-                thread  => $c->_current_thread()->id(),
                 page    => $page_number,
             }
         );
